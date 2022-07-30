@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: staticpv
+    labels:
+        type: localPV
+spec:
+    storageClassName: localstorage
+    capacity:
+      storage: 4Gi
+    accessModes:
+      - ReadWriteOnce 
+    persistentVolumeReclaimPolicy: Retain
+    hostPath:
+      path: "/data/db" 
